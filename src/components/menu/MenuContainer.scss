@@ -1,4 +1,4 @@
-@import "../../base";
+@import '../../base';
 
 .menu-item-container {
   display: flex;
@@ -15,6 +15,8 @@
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   border: thin solid black;
+  cursor: pointer;
+
   .category-selector {
     transform-origin: 0 0;
     transform: rotate(90deg);
@@ -22,20 +24,25 @@
     margin: 10px 0 0 30px;
   }
 }
+.category-tab:active {
+  border-left: none;
+}
 .menu-item-container-inside {
   display: flex;
   flex-direction: column;
   background-color: $base-dark;
+  padding-bottom: 2%;
+  width: 100%;
 }
 .item-container::-webkit-scrollbar {
   display: none;
 }
 .item-container {
-  flex-grow: 1;
   overflow-y: scroll;
   overflow-x: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  padding-left: 9px;
 }
 
 .category-selectors {
@@ -47,7 +54,5 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0;
-  align-items: center;
-  justify-content: space-evenly;
-  border: thin solid black;
+  align-items: flex-start;
 }

@@ -15,6 +15,7 @@ export default function DragAndDrop({
 
   const initialColumnState = [];
 
+  //Creating a Droppable area for each seat
   for (let i = 0; i < tableInfo.seats; i++) {
     initialColumnState.push({ id: i, title: `Seat ${i}`, items: [] });
     itemsOnBill.forEach((item) => {
@@ -29,6 +30,7 @@ export default function DragAndDrop({
     //eslint-disable-next-line
   }, [bill, tableInfo]);
 
+  //logic for drag and drop and to update seat number on release
   const handleOnDragEnd = (result) => {
     const { destination, source } = result;
     if (!result.destination) return;
@@ -49,7 +51,6 @@ export default function DragAndDrop({
       item: reorderedItem.orderItemId,
     };
     updateBill(tableInfo, upData);
-    console.log(columns[parseInt(destination.droppableId)]);
 
     const newItems = [];
     Axios.get(`/api/orders/${tableInfo.orderId}/items`).then((res) => {
@@ -60,6 +61,7 @@ export default function DragAndDrop({
       });
     });
   };
+
   const droppableAreas = columns.map((item, index) => {
     return (
       <Droppable

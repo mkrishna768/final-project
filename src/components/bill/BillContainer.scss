@@ -30,6 +30,7 @@
     display: flex;
     justify-content: space-between;
     font-size: 2em;
+    cursor: pointer;
   }
   .mod {
     align-self: flex-start;
@@ -58,6 +59,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 5px;
+    cursor: pointer;
   }
   .edit-section {
     display: flex;
@@ -77,9 +79,9 @@
     background-color: #ff8c42;
   }
   .edit-input {
-    border: thin solid black;
     height: 1.5em;
     font-size: 1.5em;
+    color: $base-white;
   }
   .edit-seat-button {
     background-color: #b33951;
@@ -105,9 +107,10 @@
   min-width: 230px;
   overflow: auto;
   z-index: 1;
-  margin-top: 30px;
-  margin-right: -159px;
+  margin-right: -285px;
+  margin-bottom: 142px;
   background-color: $base-dark;
+  bottom: 0;
 }
 .print-dropdown {
   position: absolute;
@@ -115,12 +118,18 @@
   overflow: auto;
   z-index: 1;
   background-color: $base-dark;
+  bottom: 0;
+  margin-bottom: 80px;
+  margin-left: 147px;
 }
 .pay-dropdown {
   position: absolute;
   overflow: auto;
   z-index: 1;
   background-color: $base-dark;
+  bottom: 0;
+  margin-bottom: 147px;
+  margin-left: 146px;
 }
 .pay-by-seat-button {
   border: thin solid black;
